@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import confetti from 'canvas-confetti';
 import { 
-  Code2, 
   Sparkles, 
-  ExternalLink, 
   Send, 
   Plus, 
   Layers, 
@@ -19,7 +17,6 @@ import {
   X, 
   Trash2, 
   Check, 
-  Flame, 
   Globe 
 } from 'lucide-react';
 import './App.css';
@@ -34,6 +31,15 @@ function Github({ size = 18 }) {
   );
 }
 
+// Helper for resolving asset paths correctly on GitHub Pages subpaths
+function getAssetUrl(path) {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+}
 
 // Initial projects data
 const INITIAL_PROJECTS = [
@@ -297,7 +303,7 @@ export default function App() {
           <div className="hero-right">
             <div className="avatar-wrapper">
               <img 
-                src="/avatar.jpg" 
+                src={getAssetUrl('/avatar.jpg')} 
                 alt="Володимир - Full-Stack Developer" 
                 className="avatar-img"
               />
@@ -496,7 +502,7 @@ export default function App() {
                 <article key={project.id} className="project-card">
                   <div className="project-thumb-container">
                     <img 
-                      src={project.image} 
+                      src={getAssetUrl(project.image)} 
                       alt={project.title} 
                       className="project-thumb"
                     />
