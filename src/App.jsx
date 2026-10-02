@@ -96,7 +96,7 @@ const ROADMAP_PROJECTS = [
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('Всі');
   const [projects, setProjects] = useState(() => {
-    const saved = localStorage.getItem('volodymyr_portfolio_projects');
+    const saved = localStorage.getItem('volodymyr_portfolio_projects_v2');
     return saved ? JSON.parse(saved) : INITIAL_PROJECTS;
   });
 
@@ -120,7 +120,7 @@ export default function App() {
 
   // Save projects to localStorage whenever changed
   useEffect(() => {
-    localStorage.setItem('volodymyr_portfolio_projects', JSON.stringify(projects));
+    localStorage.setItem('volodymyr_portfolio_projects_v2', JSON.stringify(projects));
   }, [projects]);
 
   const showToast = (msg) => {
