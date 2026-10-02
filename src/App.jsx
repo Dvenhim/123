@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import confetti from 'canvas-confetti';
-import { 
-  Sparkles, 
-  Send, 
-  Plus, 
-  Layers, 
-  CheckCircle2, 
-  Clock, 
-  Briefcase, 
-  Cpu, 
-  Database, 
-  Layout, 
-  Mail, 
-  Terminal, 
-  ArrowUpRight, 
-  X, 
-  Trash2, 
-  Check, 
-  Globe 
+import {
+  Sparkles,
+  Send,
+  Plus,
+  Layers,
+  CheckCircle2,
+  Clock,
+  Briefcase,
+  Cpu,
+  Database,
+  Layout,
+  Mail,
+  Terminal,
+  ArrowUpRight,
+  X,
+  Trash2,
+  Check,
+  Globe
 } from 'lucide-react';
 import './App.css';
 
@@ -237,9 +237,9 @@ export default function App() {
         </nav>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <button 
+          <button
             id="add-project-nav-btn"
-            className="btn btn-secondary" 
+            className="btn btn-secondary"
             onClick={() => setIsModalOpen(true)}
             style={{ fontSize: '0.85rem', padding: '0.5rem 1rem' }}
           >
@@ -267,7 +267,7 @@ export default function App() {
             </h1>
 
             <p className="hero-bio">
-              Full-Stack розробник із пристрастю до чистої архітектури, високої швидкодії та бездоганного інтерфейсу. 
+              Full-Stack розробник із пристрастю до чистої архітектури, високої швидкодії та бездоганного інтерфейсу.
               Перетворюю складні ідеї на надійні, масштабовані та зручні веб-застосунки.
             </p>
 
@@ -275,7 +275,7 @@ export default function App() {
               <a href="#projects" className="btn btn-primary" style={{ textDecoration: 'none' }}>
                 <Briefcase size={18} /> Переглянути мої проєкти
               </a>
-              <button 
+              <button
                 id="add-project-hero-btn"
                 className="btn btn-secondary"
                 onClick={() => setIsModalOpen(true)}
@@ -302,9 +302,9 @@ export default function App() {
 
           <div className="hero-right">
             <div className="avatar-wrapper">
-              <img 
-                src={getAssetUrl('/avatar.jpg')} 
-                alt="Володимир - Full-Stack Developer" 
+              <img
+                src={getAssetUrl('/avatar.jpg')}
+                alt="Володимир - Full-Stack Developer"
                 className="avatar-img"
               />
               <div className="floating-pill pill-top">
@@ -336,12 +336,12 @@ export default function App() {
               <div className="glass-panel about-card">
                 <h3><Cpu size={22} color="#6366f1" /> Інженерна філософія</h3>
                 <p>
-                  Я вірю, що якісний програмний продукт будується на трьох стовпах: 
-                  <strong> надійність</strong>, <strong>читабельність коду</strong> та <strong>швидкість роботи</strong>. 
+                  Я вірю, що якісний програмний продукт будується на трьох стовпах:
+                  <strong> надійність</strong>, <strong>читабельність коду</strong> та <strong>швидкість роботи</strong>.
                   Уникаю зайвої складності й плейсхолдерів, проєктуючи компоненти та сервіси за принципами SOLID, DRY та KISS.
                 </p>
                 <p>
-                  Постійно вдосконалюю підходи, поєднуючи сучасні фронтенд-технології (React 19, TypeScript, сучасний CSS) 
+                  Постійно вдосконалюю підходи, поєднуючи сучасні фронтенд-технології (React 19, TypeScript, сучасний CSS)
                   із надійним бекендом та автоматизацією процесів.
                 </p>
 
@@ -487,9 +487,9 @@ export default function App() {
                 ))}
               </div>
 
-              <button 
+              <button
                 id="add-project-tab-btn"
-                className="btn btn-primary" 
+                className="btn btn-primary"
                 onClick={() => setIsModalOpen(true)}
               >
                 <Plus size={16} /> Додати свій проєкт
@@ -501,9 +501,9 @@ export default function App() {
               {filteredProjects.map(project => (
                 <article key={project.id} className="project-card">
                   <div className="project-thumb-container">
-                    <img 
-                      src={getAssetUrl(project.image)} 
-                      alt={project.title} 
+                    <img
+                      src={getAssetUrl(project.image)}
+                      alt={project.title}
                       className="project-thumb"
                     />
                     <div className="project-badge-overlay">
@@ -518,7 +518,7 @@ export default function App() {
                     <div>
                       <h3 className="project-title">{project.title}</h3>
                       <p className="project-description">{project.description}</p>
-                      
+
                       <div className="project-tags">
                         {project.tags.map((tag, i) => (
                           <span key={i} className="project-tag">{tag}</span>
@@ -528,18 +528,18 @@ export default function App() {
 
                     <div className="project-actions">
                       {project.demoUrl && project.demoUrl !== '#' ? (
-                        <a 
-                          href={project.demoUrl} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          className="btn btn-primary" 
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn btn-primary"
                           style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.85rem', textDecoration: 'none' }}
                         >
                           <Globe size={15} /> Демо
                         </a>
                       ) : (
-                        <button 
-                          className="btn btn-primary" 
+                        <button
+                          className="btn btn-primary"
                           style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.85rem' }}
                           onClick={() => showToast(`Демо проєкту "${project.title}" готується до публікації!`)}
                         >
@@ -548,11 +548,11 @@ export default function App() {
                       )}
 
                       {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          className="btn btn-secondary" 
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn btn-secondary"
                           style={{ padding: '0.5rem 0.85rem', textDecoration: 'none' }}
                           title="Переглянути код"
                         >
@@ -561,8 +561,8 @@ export default function App() {
                       )}
 
                       {project.isCustom && (
-                        <button 
-                          className="btn btn-ghost" 
+                        <button
+                          className="btn btn-ghost"
                           style={{ color: '#f43f5e', padding: '0.5rem 0.75rem' }}
                           onClick={() => handleDeleteProject(project.id)}
                           title="Видалити доданий проєкт"
@@ -618,8 +618,8 @@ export default function App() {
               ))}
 
               {/* Add idea card */}
-              <div 
-                className="roadmap-card" 
+              <div
+                className="roadmap-card"
                 style={{ cursor: 'pointer', borderStyle: 'dashed', borderColor: 'rgba(99, 102, 241, 0.4)', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}
                 onClick={() => {
                   setNewStatus('В планах');
@@ -660,7 +660,7 @@ export default function App() {
                     <Send size={20} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Telegram</div>
+                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Telegram @dvenhim</div>
                     <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Швидка відповідь онлайн</div>
                   </div>
                 </a>
@@ -671,7 +671,7 @@ export default function App() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Електронна пошта</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>volodymyr@example.com</div>
+                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>[vladimir.tatarenko.1999@gmail.com]</div>
                   </div>
                 </a>
 
@@ -680,7 +680,7 @@ export default function App() {
                     <Github size={20} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>GitHub профіль</div>
+                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>GitHub профіль https://github.com/Dvenhim</div>
                     <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Відкритий вихідний код</div>
                   </div>
                 </a>
@@ -690,10 +690,10 @@ export default function App() {
               <form className="glass-panel contact-form" onSubmit={handleContactSubmit}>
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">Ваше ім'я</label>
-                  <input 
+                  <input
                     id="contact-name-input"
-                    type="text" 
-                    className="input-text" 
+                    type="text"
+                    className="input-text"
                     placeholder="Наприклад: Олексій"
                     value={contactName}
                     onChange={e => setContactName(e.target.value)}
@@ -703,10 +703,10 @@ export default function App() {
 
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">Ваш Email або Telegram</label>
-                  <input 
+                  <input
                     id="contact-email-input"
-                    type="text" 
-                    className="input-text" 
+                    type="text"
+                    className="input-text"
                     placeholder="email@domain.com або @username"
                     value={contactEmail}
                     onChange={e => setContactEmail(e.target.value)}
@@ -716,9 +716,9 @@ export default function App() {
 
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">Повідомлення або деталі проєкту</label>
-                  <textarea 
+                  <textarea
                     id="contact-message-input"
-                    className="input-text" 
+                    className="input-text"
                     rows={4}
                     placeholder="Опишіть ваше завдання або питання..."
                     value={contactMessage}
@@ -728,9 +728,9 @@ export default function App() {
                   />
                 </div>
 
-                <button 
+                <button
                   id="contact-submit-btn"
-                  type="submit" 
+                  type="submit"
                   className="btn btn-primary"
                   style={{ width: '100%', padding: '0.85rem' }}
                 >
@@ -778,8 +778,8 @@ export default function App() {
               <h3 style={{ fontSize: '1.35rem', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <Plus size={20} color="#6366f1" /> Додати новий або майбутній проєкт
               </h3>
-              <button 
-                className="btn btn-ghost" 
+              <button
+                className="btn btn-ghost"
                 style={{ padding: '0.4rem' }}
                 onClick={() => setIsModalOpen(false)}
               >
@@ -790,9 +790,9 @@ export default function App() {
             <form onSubmit={handleAddProject} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div className="form-group" style={{ marginBottom: 0 }}>
                 <label className="form-label">Назва проєкту</label>
-                <input 
-                  type="text" 
-                  className="input-text" 
+                <input
+                  type="text"
+                  className="input-text"
                   placeholder="Наприклад: Cloud AI Task Assistant"
                   value={newTitle}
                   onChange={e => setNewTitle(e.target.value)}
@@ -802,8 +802,8 @@ export default function App() {
 
               <div className="form-group" style={{ marginBottom: 0 }}>
                 <label className="form-label">Опис проєкту</label>
-                <textarea 
-                  className="input-text" 
+                <textarea
+                  className="input-text"
                   rows={3}
                   placeholder="Коротко опишіть мету, функціонал та ключові особливості..."
                   value={newDesc}
@@ -815,7 +815,7 @@ export default function App() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">Категорія</label>
-                  <select 
+                  <select
                     className="input-select"
                     value={newCategory}
                     onChange={e => setNewCategory(e.target.value)}
@@ -829,7 +829,7 @@ export default function App() {
 
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">Статус</label>
-                  <select 
+                  <select
                     className="input-select"
                     value={newStatus}
                     onChange={e => setNewStatus(e.target.value)}
@@ -843,9 +843,9 @@ export default function App() {
 
               <div className="form-group" style={{ marginBottom: 0 }}>
                 <label className="form-label">Стек технологій (через кому)</label>
-                <input 
-                  type="text" 
-                  className="input-text" 
+                <input
+                  type="text"
+                  className="input-text"
                   placeholder="Наприклад: React 19, TypeScript, PostgreSQL, Prisma"
                   value={newTags}
                   onChange={e => setNewTags(e.target.value)}
@@ -855,9 +855,9 @@ export default function App() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">Посилання на Демо (опціонально)</label>
-                  <input 
-                    type="url" 
-                    className="input-text" 
+                  <input
+                    type="url"
+                    className="input-text"
                     placeholder="https://my-demo.com"
                     value={newDemo}
                     onChange={e => setNewDemo(e.target.value)}
@@ -866,9 +866,9 @@ export default function App() {
 
                 <div className="form-group" style={{ marginBottom: 0 }}>
                   <label className="form-label">GitHub репозиторій (опціонально)</label>
-                  <input 
-                    type="url" 
-                    className="input-text" 
+                  <input
+                    type="url"
+                    className="input-text"
                     placeholder="https://github.com/..."
                     value={newGithub}
                     onChange={e => setNewGithub(e.target.value)}
@@ -877,15 +877,15 @@ export default function App() {
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '1rem' }}>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="btn btn-secondary"
                   onClick={() => setIsModalOpen(false)}
                 >
                   Скасувати
                 </button>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn btn-primary"
                 >
                   <Plus size={16} /> Додати до портфоліо
