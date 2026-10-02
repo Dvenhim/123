@@ -41,29 +41,54 @@ function getAssetUrl(path) {
   return `${import.meta.env.BASE_URL}${cleanPath}`;
 }
 
-// Initial projects data — empty, real projects coming soon
-const INITIAL_PROJECTS = [];
+// Initial projects data
+const INITIAL_PROJECTS = [
+  {
+    id: 1,
+    title: 'Telegram Bot: Pocket Money Tracker',
+    description: 'Портативий Telegram-бот для відстеження витрат та доходів, з інтеграцією аналітики та графіків для візуалізації фінансових даних.',
+    category: 'Кошти & Інструменти',
+    tags: ['Python', 'JavaScript', 'Telegram Bot API', 'PostgreSQL', 'Chart.js'],
+    image: '/telegram.jpg',
+    demoUrl: 'https://t.me/vovtat_bot',
+    githubUrl: 'https://github.com/volodymyr/nova-analytics',
+    status: 'Дороблюється',
+    isCustom: false
+  },
+  {
+    id: 2,
+    title: 'Activities & Sport',
+    description: 'Допомічник зі спорту та активностей, що надає рекомендації, відстежує прогрес та інтегрується з календарем для планування тренувань.',
+    category: 'Sports & Lifestyle',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'REST API'],
+    image: '/sport.png',
+    demoUrl: '-',
+    githubUrl: '-',
+    status: 'Плани на майбутнє',
+    isCustom: false
+  }
+];
 
 const ROADMAP_PROJECTS = [
   {
-    title: 'REST API для блогу',
-    description: 'Мій перший серйозний бекенд-проєкт — REST API з авторизацією, CRUD для постів, коментарів та JWT-токенами. Вивчаю Node.js та Express на практиці.',
+    title: 'AI Code Reviewer & Security Shield',
+    description: 'Автоматизований сервіс аналізу Pull Requests для виявлення вразливостей, витоків секретів та перевірки чистої архітектури.',
     status: 'В розробці',
-    tech: 'Node.js, Express.js, PostgreSQL, JWT',
-    eta: 'Кінець 2026'
+    tech: 'TypeScript, OpenAI API, GitHub Actions',
+    eta: 'Q4 2026'
   },
   {
-    title: 'Telegram-бот для навчання',
-    description: 'Бот, який допомагає учням отримувати розклад, нагадування та корисні посилання для навчання. Практика роботи з API та базами даних.',
+    title: 'Cloud Productivity & Workflow Hub',
+    description: 'Персональний простір для керування задачами, нотатками та інтеграціями з месенджерами з миттєвою синхронізацією.',
     status: 'Проектування',
-    tech: 'Python, python-telegram-bot, SQLite',
-    eta: 'Початок 2027'
+    tech: 'Next.js 15, Supabase, Tailwind, Zustand',
+    eta: 'Q1 2027'
   },
   {
-    title: 'Система управління завданнями (API)',
-    description: 'Бекенд-сервіс для трекінгу задач із ролями користувачів, фільтрацією та базою даних. Мета — навчитися будувати надійну архітектуру.',
+    title: 'Micro-SaaS Multi-Tenant Billing Gateway',
+    description: 'Модульний бекенд-сервіс для підписок, виставлення рахунків та управління тарифними планами для стартапів.',
     status: 'В планах',
-    tech: 'Node.js / Python, PostgreSQL, REST API',
+    tech: 'FastAPI / Python, PostgreSQL, Stripe API',
     eta: '2027'
   }
 ];
@@ -221,17 +246,17 @@ export default function App() {
           <div className="hero-left">
             <div className="status-badge">
               <span className="brand-dot"></span>
-              Учень 10-А класу · Майбутній Back-End розробник
+              Відкритий до нових пропозицій та проєктів
             </div>
 
             <h1 className="hero-name-title">
               Привіт, я <span className="gradient-text">Володимир</span>.<br />
-              Вчуся будувати надійний бекенд.
+              Створюю сучасні цифрові рішення.
             </h1>
 
             <p className="hero-bio">
-              Учень 10-А класу, який серйозно захопився програмуванням і крок за кроком іде до мети — стати
-              Back-End розробником. Вивчаю Node.js, бази даних та архітектуру API. Портфоліо в процесі наповнення — реальні проєкти скоро з'являться!
+              Я учень 10-А класу ліцею 141 "ОРТ" та початківець у програмуванні, я навчаюся на Back-End розробника.
+              Моя мета - стати професійним розробником і створювати круті проєкти, які допоможуть людям.
             </p>
 
             <div className="hero-actions">
@@ -251,13 +276,13 @@ export default function App() {
             </div>
 
             <div className="hero-socials">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="social-btn" title="GitHub">
+              <a href="https://github.com/Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="GitHub">
                 <Github size={18} />
               </a>
-              <a href="https://t.me" target="_blank" rel="noreferrer" className="social-btn" title="Telegram">
+              <a href="https://t.me/Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="Telegram">
                 <Send size={18} />
               </a>
-              <a href="mailto:volodymyr@example.com" className="social-btn" title="Email">
+              <a href="mailto:vladimir.tatarenko.1999@gmail.com" className="social-btn" title="Email">
                 <Mail size={18} />
               </a>
             </div>
@@ -267,16 +292,16 @@ export default function App() {
             <div className="avatar-wrapper">
               <img
                 src={getAssetUrl('/avatar.jpg')}
-                alt="Володимир - Back-End розробник"
+                alt="Володимир - Back-End Developer"
                 className="avatar-img"
               />
               <div className="floating-pill pill-top">
                 <Sparkles size={16} color="#6366f1" />
-                <span>Back-End розробник</span>
+                <span>Clean Architecture & SOLID</span>
               </div>
               <div className="floating-pill pill-bottom">
                 <CheckCircle2 size={16} color="#10b981" />
-                <span>Навчаюсь · Розвиваюсь</span>
+                <span>100% Production Ready</span>
               </div>
             </div>
           </div>
@@ -288,51 +313,52 @@ export default function App() {
             <div className="section-header">
               <span className="section-tag">Про мене</span>
               <h2 className="section-title-large">
-                Хто я та чому програмування
+                Хто я та мій підхід до розробки
               </h2>
               <p className="section-desc">
-                Не просто захоплення — це мета. Я щодня навчаюся, пишу код і будую фундамент для майбутньої кар'єри.
+                Мій пріоритет — створення рішень, які не просто працюють, а приносять реальну цінність користувачам та легко масштабуються.
               </p>
             </div>
 
             <div className="about-grid">
               <div className="glass-panel about-card">
-                <h3><Cpu size={22} color="#6366f1" /> Мій шлях</h3>
+                <h3><Cpu size={22} color="#6366f1" /> Інженерна філософія</h3>
                 <p>
-                  Мене звати Володимир, я учень <strong>10-А класу</strong>. Програмуванням захопився серйозно і поставив собі чітку ціль —
-                  стати <strong>Back-End розробником</strong>.
+                  Я вірю, що якісний програмний продукт будується на трьох стовпах:
+                  <strong> надійність</strong>, <strong>читабельність коду</strong> та <strong>швидкість роботи</strong>.
+                  Уникаю зайвої складності й плейсхолдерів, проєктуючи компоненти та сервіси за принципами SOLID, DRY та KISS.
                 </p>
                 <p>
-                  Зараз активно вивчаю <strong>Node.js</strong>, <strong>бази даних (PostgreSQL)</strong>, REST API та принципи
-                  проєктування архітектури. Хочу будувати надійні сервери та API, які справді тримаються під навантаженням.
+                  Постійно вдосконалюю підходи, поєднуючи сучасні фронтенд-технології (JavaScript, React, TypeScript, Tailwind, Next.js, C#)
+                  із надійним бекендом та автоматизацією процесів.
                 </p>
 
                 <div className="stats-row">
                   <div className="stat-item">
-                    <div className="stat-num gradient-text">10-А</div>
-                    <div className="stat-sub">Мій клас</div>
+                    <div className="stat-num gradient-text">100%</div>
+                    <div className="stat-sub">Типобезпечність</div>
                   </div>
                   <div className="stat-item">
-                    <div className="stat-num gradient-text-cyan">Back-End</div>
-                    <div className="stat-sub">Мій фокус</div>
+                    <div className="stat-num gradient-text-cyan">&lt;1s</div>
+                    <div className="stat-sub">Час відповіді UI</div>
                   </div>
                   <div className="stat-item">
-                    <div className="stat-num" style={{ color: '#10b981' }}>∞</div>
-                    <div className="stat-sub">Бажання вчитись</div>
+                    <div className="stat-num" style={{ color: '#10b981' }}>0</div>
+                    <div className="stat-sub">Компромісів з якістю</div>
                   </div>
                 </div>
               </div>
 
               <div className="glass-panel about-card">
-                <h3><Layers size={22} color="#06b6d4" /> Що я вже знаю та до чого прагну</h3>
+                <h3><Layers size={22} color="#06b6d4" /> Що я ціную в проєктах</h3>
                 <p>
-                  <strong>Вже вивчив:</strong> основи JavaScript, HTML/CSS, розуміння того, як працює інтернет (HTTP, DNS, клієнт-сервер). Цей сайт — одна з моїх перших робіт!
+                  <strong>Користувацький досвід (UX/UI):</strong> Сучасний дизайн — це не лише естетика, а й плавність переходів, зрозуміла навігація та швидкий відгук на кожну дію.
                 </p>
                 <p>
-                  <strong>Зараз вивчаю:</strong> Node.js, Express.js, основи роботи з PostgreSQL, базові концепції REST API та автентифікація (JWT).
+                  <strong>Безпека та масштабування:</strong> Робота з базами даних (PostgreSQL, Prisma), санітизація даних, захист від витоку конфігурацій та побудова стійкої архітектури API.
                 </p>
                 <p>
-                  <strong>Моя ціль:</strong> Отримати першу роботу/стажування як Junior Back-End розробник після закінчення школи і продовжувати розвиватись у цій сфері.
+                  <strong>Автоматизація та AI-workflow:</strong> Ефективне використання інструментів ШІ та правил лінтингу для прискорення розробки без втрати контролю над якістю коду.
                 </p>
               </div>
             </div>
@@ -429,9 +455,9 @@ export default function App() {
           <div className="container">
             <div className="section-header">
               <span className="section-tag">Портфоліо</span>
-              <h2 className="section-title-large">Мої проєкти</h2>
+              <h2 className="section-title-large">Мої розроблені проєкти</h2>
               <p className="section-desc">
-                Я тільки на початку шляху, тому реальні проєкти ще в розробці. Незабаром тут з'являться мої перші справжні роботи!
+                Добірка реалізованих веб-застосунків, інтерфейсів та систем. Ви можете додавати сюди нові проєкти у будь-який момент!
               </p>
             </div>
 
@@ -460,124 +486,82 @@ export default function App() {
 
             {/* Projects Grid */}
             <div className="projects-grid">
-              {filteredProjects.length === 0 ? (
-                <div style={{
-                  gridColumn: '1 / -1',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '1.25rem',
-                  padding: '4rem 2rem',
-                  borderRadius: '1.25rem',
-                  border: '2px dashed rgba(99,102,241,0.3)',
-                  background: 'rgba(99,102,241,0.04)',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    width: 72, height: 72, borderRadius: '50%',
-                    background: 'rgba(99,102,241,0.12)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center'
-                  }}>
-                    <Clock size={32} color="#6366f1" />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.5rem' }}>
-                      Проєкти скоро з'являться! 🚀
-                    </div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: 480, lineHeight: 1.7 }}>
-                      Я активно навчаюся та пишу свої перші реальні проєкти. Зовсім скоро тут будуть мої роботи з Node.js, API та баз даних.
-                      Слідкуй за оновленнями!
+              {filteredProjects.map(project => (
+                <article key={project.id} className="project-card">
+                  <div className="project-thumb-container">
+                    <img
+                      src={getAssetUrl(project.image)}
+                      alt={project.title}
+                      className="project-thumb"
+                    />
+                    <div className="project-badge-overlay">
+                      <span className="badge badge-primary">{project.category}</span>
+                      <span className={`badge ${project.status === 'Завершено' ? 'badge-emerald' : 'badge-amber'}`}>
+                        {project.status}
+                      </span>
                     </div>
                   </div>
-                  <a
-                    href="https://github.com/Dvenhim"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-secondary"
-                    style={{ textDecoration: 'none', marginTop: '0.5rem' }}
-                  >
-                    <Github size={16} /> Слідкуй на GitHub
-                  </a>
-                </div>
-              ) : (
-                filteredProjects.map(project => (
-                  <article key={project.id} className="project-card">
-                    <div className="project-thumb-container">
-                      <img
-                        src={getAssetUrl(project.image)}
-                        alt={project.title}
-                        className="project-thumb"
-                      />
-                      <div className="project-badge-overlay">
-                        <span className="badge badge-primary">{project.category}</span>
-                        <span className={`badge ${project.status === 'Завершено' ? 'badge-emerald' : 'badge-amber'}`}>
-                          {project.status}
-                        </span>
+
+                  <div className="project-content">
+                    <div>
+                      <h3 className="project-title">{project.title}</h3>
+                      <p className="project-description">{project.description}</p>
+
+                      <div className="project-tags">
+                        {project.tags.map((tag, i) => (
+                          <span key={i} className="project-tag">{tag}</span>
+                        ))}
                       </div>
                     </div>
 
-                    <div className="project-content">
-                      <div>
-                        <h3 className="project-title">{project.title}</h3>
-                        <p className="project-description">{project.description}</p>
+                    <div className="project-actions">
+                      {project.demoUrl && project.demoUrl !== '#' ? (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn btn-primary"
+                          style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.85rem', textDecoration: 'none' }}
+                        >
+                          <Globe size={15} /> Демо
+                        </a>
+                      ) : (
+                        <button
+                          className="btn btn-primary"
+                          style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.85rem' }}
+                          onClick={() => showToast(`Демо проєкту "${project.title}" готується до публікації!`)}
+                        >
+                          <Globe size={15} /> Демо
+                        </button>
+                      )}
 
-                        <div className="project-tags">
-                          {project.tags.map((tag, i) => (
-                            <span key={i} className="project-tag">{tag}</span>
-                          ))}
-                        </div>
-                      </div>
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn btn-secondary"
+                          style={{ padding: '0.5rem 0.85rem', textDecoration: 'none' }}
+                          title="Переглянути код"
+                        >
+                          <Github size={16} />
+                        </a>
+                      )}
 
-                      <div className="project-actions">
-                        {project.demoUrl && project.demoUrl !== '#' ? (
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="btn btn-primary"
-                            style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.85rem', textDecoration: 'none' }}
-                          >
-                            <Globe size={15} /> Демо
-                          </a>
-                        ) : (
-                          <button
-                            className="btn btn-primary"
-                            style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.85rem' }}
-                            onClick={() => showToast(`Демо проєкту "${project.title}" готується до публікації!`)}
-                          >
-                            <Globe size={15} /> Демо
-                          </button>
-                        )}
-
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="btn btn-secondary"
-                            style={{ padding: '0.5rem 0.85rem', textDecoration: 'none' }}
-                            title="Переглянути код"
-                          >
-                            <Github size={16} />
-                          </a>
-                        )}
-
-                        {project.isCustom && (
-                          <button
-                            className="btn btn-ghost"
-                            style={{ color: '#f43f5e', padding: '0.5rem 0.75rem' }}
-                            onClick={() => handleDeleteProject(project.id)}
-                            title="Видалити доданий проєкт"
-                          >
-                            <Trash2 size={16} />
-                          </button>
-                        )}
-                      </div>
+                      {project.isCustom && (
+                        <button
+                          className="btn btn-ghost"
+                          style={{ color: '#f43f5e', padding: '0.5rem 0.75rem' }}
+                          onClick={() => handleDeleteProject(project.id)}
+                          title="Видалити доданий проєкт"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      )}
                     </div>
-                  </article>
-                ))
-              )}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -586,10 +570,10 @@ export default function App() {
         <section className="section-wrapper" id="roadmap">
           <div className="container">
             <div className="section-header">
-              <span className="section-tag" style={{ color: '#f59e0b' }}>Що далі</span>
-              <h2 className="section-title-large">Проєкти, які я планую зробити</h2>
+              <span className="section-tag" style={{ color: '#f59e0b' }}>Майбутні проєкти</span>
+              <h2 className="section-title-large">Ідеї на черзі та плани розробки</h2>
               <p className="section-desc">
-                Конкретні ідеї, над якими я буду працювати, поки навчаюся. Реальні задачі — найкращий спосіб зрости як розробник.
+                Простір для нових задумів та майбутніх релізів. Я постійно експериментую з новими архітектурними рішеннями.
               </p>
             </div>
 
@@ -651,9 +635,9 @@ export default function App() {
           <div className="container">
             <div className="section-header">
               <span className="section-tag" style={{ color: '#10b981' }}>Зв'язок</span>
-              <h2 className="section-title-large">Напишіть мені — завжди радий!</h2>
+              <h2 className="section-title-large">Давайте створимо щось чудове разом</h2>
               <p className="section-desc">
-                Відкритий до спілкування, питань про навчання, порад від досвідчених розробників або просто — якщо хочете познайомитись!
+                Маєте ідею для проєкту, шукаєте надійного розробника або бажаєте обговорити співпрацю? Напишіть мені!
               </p>
             </div>
 
@@ -664,7 +648,7 @@ export default function App() {
                     <Send size={20} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Telegram @dvenhim</div>
+                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Telegram: @dvenhim</div>
                     <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Швидка відповідь онлайн</div>
                   </div>
                 </a>
@@ -675,7 +659,7 @@ export default function App() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Електронна пошта</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>[vladimir.tatarenko.1999@gmail.com]</div>
+                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>vladimir.tatarenko.1999@gmail.com</div>
                   </div>
                 </a>
 
@@ -684,8 +668,8 @@ export default function App() {
                     <Github size={20} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>GitHub профіль https://github.com/Dvenhim</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Відкритий вихідний код</div>
+                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>GitHub профіль</div>
+                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}> https://github.com/Dvenhim</div>
                   </div>
                 </a>
               </div>
@@ -698,7 +682,7 @@ export default function App() {
                     id="contact-name-input"
                     type="text"
                     className="input-text"
-                    placeholder="Наприклад: Олексій"
+                    placeholder="Наприклад: Ярослав"
                     value={contactName}
                     onChange={e => setContactName(e.target.value)}
                     required
