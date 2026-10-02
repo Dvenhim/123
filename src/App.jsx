@@ -267,8 +267,8 @@ export default function App() {
             </h1>
 
             <p className="hero-bio">
-              Full-Stack розробник із пристрастю до чистої архітектури, високої швидкодії та бездоганного інтерфейсу.
-              Перетворюю складні ідеї на надійні, масштабовані та зручні веб-застосунки.
+              Я учень 10-А класу ліцею 141 "ОРТ" та початківець у програмуванні, я навчаюся на Back-End розробника.
+              Моя мета - стати професійним розробником і створювати круті проєкти, які допоможуть людям.
             </p>
 
             <div className="hero-actions">
@@ -288,13 +288,13 @@ export default function App() {
             </div>
 
             <div className="hero-socials">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="social-btn" title="GitHub">
+              <a href="https://github.com/Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="GitHub">
                 <Github size={18} />
               </a>
-              <a href="https://t.me" target="_blank" rel="noreferrer" className="social-btn" title="Telegram">
+              <a href="https://t.me/@Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="Telegram">
                 <Send size={18} />
               </a>
-              <a href="mailto:volodymyr@example.com" className="social-btn" title="Email">
+              <a href="mailto:vladimir.tatarenko.1999@gmail.com" className="social-btn" title="Email">
                 <Mail size={18} />
               </a>
             </div>
@@ -660,7 +660,7 @@ export default function App() {
                     <Send size={20} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Telegram @dvenhim</div>
+                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Telegram: @dvenhim</div>
                     <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Швидка відповідь онлайн</div>
                   </div>
                 </a>
@@ -671,7 +671,7 @@ export default function App() {
                   </div>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>Електронна пошта</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>[vladimir.tatarenko.1999@gmail.com]</div>
+                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>vladimir.tatarenko.1999@gmail.com</div>
                   </div>
                 </a>
 
@@ -680,8 +680,8 @@ export default function App() {
                     <Github size={20} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>GitHub профіль https://github.com/Dvenhim</div>
-                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Відкритий вихідний код</div>
+                    <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>GitHub профіль</div>
+                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}> https://github.com/Dvenhim</div>
                   </div>
                 </a>
               </div>
