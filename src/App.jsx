@@ -45,38 +45,26 @@ function getAssetUrl(path) {
 const INITIAL_PROJECTS = [
   {
     id: 1,
-    title: 'Nova Analytics & AI Dashboard',
-    description: 'Високопродуктивна аналітична платформа для моніторингу роботи ШІ-моделей, навантаження серверів та API-запитів з інтерактивними дашбордами в реальному часі.',
-    category: 'AI & Інструменти',
-    tags: ['React 19', 'TypeScript', 'Vite', 'Recharts', 'Tailwind/CSS'],
-    image: '/project1.jpg',
-    demoUrl: 'https://example.com/nova-demo',
+    title: 'Telegram Bot: Pocket Money Tracker',
+    description: 'Портативий Telegram-бот для відстеження витрат та доходів, з інтеграцією аналітики та графіків для візуалізації фінансових даних.',
+    category: 'Кошти & Інструменти',
+    tags: ['Python', 'JavaScript', 'Telegram Bot API', 'PostgreSQL', 'Chart.js'],
+    image: '/telegram.jpg',
+    demoUrl: 'https://t.me/vovtat_bot',
     githubUrl: 'https://github.com/volodymyr/nova-analytics',
-    status: 'Завершено',
+    status: 'Дороблюється',
     isCustom: false
   },
   {
     id: 2,
-    title: 'TechNova Next-Gen Marketplace',
-    description: 'Сучасна e-commerce платформа з оптимізованим каталогом товарів, швидким пошуком, кошиком, фільтрацією та інтерактивною аналітикою продажів.',
-    category: 'Full-Stack',
+    title: 'Activities & Sport',
+    description: 'Допомічник зі спорту та активностей, що надає рекомендації, відстежує прогрес та інтегрується з календарем для планування тренувань.',
+    category: 'Sports & Lifestyle',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'REST API'],
-    image: '/project2.jpg',
-    demoUrl: 'https://example.com/technova-demo',
-    githubUrl: 'https://github.com/volodymyr/technova-store',
-    status: 'Завершено',
-    isCustom: false
-  },
-  {
-    id: 3,
-    title: 'Aether Rule & Prompt Studio',
-    description: 'Інструмент для інженерії промптів та автоматичної генерації суворих правил GEMINI.md для оптимізації роботи з великими мовними моделями.',
-    category: 'Web Apps',
-    tags: ['React 19', 'Vanilla CSS Tokens', 'Canvas Confetti', 'Vite'],
-    image: '/project1.jpg',
-    demoUrl: '#',
-    githubUrl: 'https://github.com/volodymyr/aether-studio',
-    status: 'Завершено',
+    image: '/sport.png',
+    demoUrl: '-',
+    githubUrl: '-',
+    status: 'Плани на майбутнє',
     isCustom: false
   }
 ];
@@ -291,7 +279,7 @@ export default function App() {
               <a href="https://github.com/Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="GitHub">
                 <Github size={18} />
               </a>
-              <a href="https://t.me/@Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="Telegram">
+              <a href="https://t.me/Dvenhim" target="_blank" rel="noreferrer" className="social-btn" title="Telegram">
                 <Send size={18} />
               </a>
               <a href="mailto:vladimir.tatarenko.1999@gmail.com" className="social-btn" title="Email">
@@ -304,7 +292,7 @@ export default function App() {
             <div className="avatar-wrapper">
               <img
                 src={getAssetUrl('/avatar.jpg')}
-                alt="Володимир - Full-Stack Developer"
+                alt="Володимир - Back-End Developer"
                 className="avatar-img"
               />
               <div className="floating-pill pill-top">
@@ -341,7 +329,7 @@ export default function App() {
                   Уникаю зайвої складності й плейсхолдерів, проєктуючи компоненти та сервіси за принципами SOLID, DRY та KISS.
                 </p>
                 <p>
-                  Постійно вдосконалюю підходи, поєднуючи сучасні фронтенд-технології (React 19, TypeScript, сучасний CSS)
+                  Постійно вдосконалюю підходи, поєднуючи сучасні фронтенд-технології (JavaScript, React, TypeScript, Tailwind, Next.js, C#)
                   із надійним бекендом та автоматизацією процесів.
                 </p>
 
@@ -694,7 +682,7 @@ export default function App() {
                     id="contact-name-input"
                     type="text"
                     className="input-text"
-                    placeholder="Наприклад: Олексій"
+                    placeholder="Наприклад: Ярослав"
                     value={contactName}
                     onChange={e => setContactName(e.target.value)}
                     required
